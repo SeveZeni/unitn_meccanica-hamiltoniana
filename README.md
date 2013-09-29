@@ -11,13 +11,13 @@ Le note contengono numerosi errori (speriamo che per la maggior parte siano typo
 Se qualche volenteroso volesse occuparsi in maniera più estensiva della manutenzione delle note lo prego di manifestare la volontà inviando una mail all'indirizzo qui sotto.
 
 Hanno contribuito alla trascrizione degli appunti:
-Agnese Barbareschi
-Matteo Carli
-Niccolò Carlino
-Fucsia Crea
-Sid Fadanelli
-Fabiano Lever
-Elia Mulas
-Mirco Visintainer
-Severino Zeni ([prime quattro lettere del nome].[cognome]@gmail.com)
-Oreste Ziliani
+Agnese Barbareschi,
+Matteo Carli,
+Niccolò Carlino,
+Fucsia Crea,
+Sid Fadanelli,
+Fabiano Lever,
+Elia Mulas,
+Mirco Visintainer,
+Severino Zeni ([prime quattro lettere del nome].[cognome]@gmail.com),
+Oreste Ziliani.
