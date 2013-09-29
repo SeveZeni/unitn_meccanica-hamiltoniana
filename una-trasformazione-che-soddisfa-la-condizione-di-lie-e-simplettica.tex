@@ -1,0 +1,204 @@
+\subsection{Una trasformazione che soddisfa la condizione di Lie è simplettica}
+\begin{theorem}
+Una trasfomazione
+\begin{equation*}
+ t' = t \qquad q'^i = q'^i (t, q^r, P_r) \qquad P'_i = P'_i (t, q^r, P_r)
+\end{equation*}
+che verifica la condizione di Lie è \textit{simplettica}, ovvero, detto $ M $ lo jacobiano della trasformazione medesima:
+
+\begin{equation} \label{eq:eq8_condlie}
+M = M (t, q^r, P_r) = \left( \begin{array}{cc}
+\frac{\partial \textit{q'}}{\partial \textit{q}} & \frac{\partial \textit{q'}}{\partial \textit{P}} \\ 
+\frac{\partial \textit{P'}}{\partial \textit{q}} & \frac{\partial \textit{P'}}{\partial \textit{P}}
+\end{array} \right)_{2n \times 2n}
+\end{equation}
+
+$ M $ soddisfa, per ogni $ t, q^k, P_r $, la condizione (di \textit{simpletticità})
+\begin{equation} \label{eq:eq9_condlie}
+M^T J M = J
+\end{equation}
+\end{theorem}
+
+\hphantom{~}
+
+Dimostriamo il teorema nel caso in cui $ F $ dipenda dalle variabili $ t, q^k, q'^k $. Ricordando la condizione di Lie e le sui implicazioni, abbiamo:
+
+\begin{equation*}
+P_i dq^i - H dt = P'_i dq'^i - H' dt = \frac{\partial F}{\partial t} dt + \frac{\partial F}{\partial q^i} dq^i + \frac{\partial F}{\partial q'^i} dq'^i
+\end{equation*}
+
+% FINE PAGINA 8 - INIZIO PAGINA 9
+
+\begin{subequations} \label{eq:eq10_condlie}
+\begin{align}
+P_i &= \frac{\partial F (t, q^r, q'^r)}{\partial q^i} \qquad i = 1, \dots , n \label{eq:eq10a_condlie}\\
+P'_i &= - \frac{\partial F (t, q^r, q'^r)}{\partial q'^i} \qquad i = 1, \dots , n \label{eq:eq10b_condlie}\\
+H' &= H + \frac{\partial F (t, q^r, q'^r)}{\partial t} \label{eq:eq10c_condlie}
+\end{align}
+\end{subequations}
+come già osservato le relazioni (\ref{eq:eq4_condlie}) (o (\ref{eq:eq10_condlie})) definiscono la trasformazione dalle $ t, q^r, P_r $ alle $ t' = t, q'^r, P'_r $ in modo \textit{implicito}, mentre lo jacobiano $ M $ che appare nella condizione ($ \ref{eq:eq9_condlie} $) è definito dalla trasformazione in modo esplicito ($ \Rightarrow $ per calcolare $ M $ dato dalla ($ \ref{eq:eq8_condlie} $) occorre conoscere $ q'^k $ e $ P'_k $ in forma di $ t, q^k, P_k $).
+Ovviamente però le ($ \ref{eq:eq10_condlie}a,b $) possono essere lette così:
+\begin{subequations} \label{eq:eq11_condlie}
+\begin{align}
+&P_i = \frac{\partial F}{\partial q^i} \left( t, q^i, q'^i (t, q^k, P_k) \right) \\
+&P'_i (t, q^k, P_k) = - \frac{\partial F}{\partial q'^i} \left( t, q^i, q'^i (t, q^k, P_k) \right)
+\end{align}
+\end{subequations}
+in cui le variabili \textit{indipendenti} sono ora $ t, q^k, P_k $. In altre parole, $ q'^i $ e $ P'_i $ che appaiono nelle ($ \ref{eq:eq10a_condlie} $) e ($ \ref{eq:eq10b_condlie} $) sono pensati come funzione di $ t, q^r, P_r $. \\
+Evidentemente ora, derivando le ($ \ref{eq:eq11_condlie} a, b $) rispetto alle variabili indipendenti $ t, q^k, P_k $, si ha:
+
+\begin{align*}
+& \begin{cases}
+0 = \frac{\partial P_i}{\partial q^j} = \frac{\partial^2 F}{\partial q^j \partial q'^i} + \frac{\partial^2 F}{\partial q'^k \partial q^i} \frac{\partial F}{\partial q^j}
+\\
+\delta_i^j = \frac{\partial P_i}{\partial P_j} = \frac{\partial^2 F}{\partial q'^k \partial q^i} \frac{\partial q'^k}{\partial P_j}
+\\
+\frac{\partial P'_i}{\partial q_j} = - \frac{\partial^2 F}{\partial q^j \partial q'^i} - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'^k}{\partial P_j}
+\\
+\frac{\partial P'_i}{\partial P_j} = - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'^k}{\partial P_j}
+\end{cases} & i, j = 1 \dots n
+\\
+& \begin{cases}
+\frac{\partial^2 F}{\partial q^j \partial q^i} + \frac{\partial^2 F}{\partial q^i \partial q'^k} \frac{\partial q'^k}{\partial q^j}
+\\
+\frac{\partial^2 F}{\partial q^i \partial q'^k} \frac{\partial q'^k}{\partial P_j} = \delta_i^j
+\\
+\frac{\partial P'_i}{\partial q_j} = - \frac{\partial^2 F}{\partial q^j \partial q'^i} - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'^k}{\partial q^j}
+\\
+\frac{\partial P'_i}{\partial P_j} = - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'k}{\partial P_j}
+\end{cases} & i, j = 1 \dots n
+\end{align*}
+
+Sia $ D_{ik} = \frac{\partial^2 F}{\partial q^i \partial q'^k} $, ovviamente $ det (D_{ik}) \neq 0 $ (vedi formula ($ \ref{eq:eq5_condlie} $) e commenti seguenti).
+
+% FINE PAGINA 9 - INIZIO PAGINA 10
+
+\begin{align*}
+& \begin{cases}
+\frac{\partial^2 F}{\partial q^j \partial q^i} + D_{ik} \frac{\partial q'^k}{\partial q^j} = 0
+\\
+D_{ik} \frac{\partial q'^k}{\partial P_j} = \delta_i^j
+\\
+\frac{\partial P'_i}{\partial q_j} = - D_{ij} - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'^k}{\partial q^j}
+\\
+\frac{\partial P'_i}{\partial P_j} = - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'k}{\partial P_j}
+\end{cases} & i, j = 1 \dots n
+\\
+& \begin{cases}
+D^{ri} \frac{\partial^2 F}{\partial q^j \partial q^i} + D^{ri} D_{ik} \frac{\partial q'^k}{\partial q^j} = 0 \qquad D^{ri} D_{ik} = \delta_k^r
+\\
+{D^r}_i D_{ik} \frac{\partial q'^k}{\partial P_j} = \delta_i^j {D^r}_i
+\\
+\frac{\partial P'_i}{\partial q_j} = - D_{ij} - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'^k}{\partial q^j}
+\\
+\frac{\partial P'_i}{\partial P_j} = - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \frac{\partial q'k}{\partial P_j}
+\end{cases} & i, j = 1 \dots n
+\\
+& \begin{cases}
+D^{ri} \frac{\partial^2 F}{\partial q^j \partial q^i} + \frac{\partial q'^r}{\partial q^j} = 0
+\\
+\frac{\partial q'^r}{\partial P_j} = D^{rj}
+\\
+\frac{\partial P'_i}{\partial q_j} = - D_{ij} - \frac{\partial^2 F}{\partial q'^k \partial q'^i} \left( -D^{kl} \frac{\partial ^2 F}{\partial q^j \partial q^r} \right)
+\\
+\frac{\partial P'_i}{\partial P_j} = - \frac{\partial^2 F}{\partial q'^k \partial q'^i} D^{kj}
+\end{cases} & i, j = 1 \dots n
+\\
+& \begin{cases}
+\frac{\partial q'^i}{\partial q^j} = - D^{il} \frac{\partial^2 F}{\partial q^j \partial q^l} =- D^{il} \frac{\partial^2 F}{\partial q^l \partial q^j}
+\\
+\frac{\partial q'^i}{\partial P_j} = D^{ij}
+\\
+\frac{\partial P'_i}{\partial q_j} = - D_{ij} + \frac{\partial^2 F}{\partial q'^k \partial q'^i}  D^{kl} \frac{\partial ^2 F}{\partial q^j \partial q^l} = - D_{ij} + \frac{\partial^2 F}{\partial q'^i \partial q'^k}  D^{kl} \frac{\partial ^2 F}{\partial q^l \partial q^j}
+\\
+\frac{\partial P'_i}{\partial P_j} = - \frac{\partial^2 F}{\partial q'^k \partial q'^i} D^{kj} = - \frac{\partial^2 F}{\partial q'^i \partial q'^k} D^{kj}
+\end{cases} & i, j = 1 \dots n
+\end{align*}
+
+Posto $ D_{ik} = \frac{\partial^2 F}{\partial q^i \partial q'^k} $ , $ G_{ik} = \frac{\partial^2 F}{\partial q'^i \partial q'^k} = G_{ki} $, $ E_{ik} = \frac{\partial^2 F}{\partial q^i \partial q^k} = E_{ki} $ \\
+
+le equazioni viste precedentemente diventano, in forma matriciale:
+
+\begin{equation*}
+\frac{\partial q'}{\partial q} = - D^{-1} E \quad \frac{\partial q'}{\partial p} = D^{-1} \quad \frac{\partial P'}{\partial q} = - D^{T} + GD^{-1} E \quad \frac{\partial P'}{\partial p} = - G D^{-1}
+\end{equation*}
+
+\begin{equation*}
+M = \left( \begin{array}{cc}
+\frac{\partial q'}{\partial q} & \frac{\partial q'}{\partial p} \\ 
+\frac{\partial P'}{\partial q} & \frac{\partial P'}{\partial p}
+\end{array} \right) = \left( \begin{array}{cc}
+- D^{-1} E & D^{-1} \\ 
+- D^{T} + GD^{-1} E & - G D^{-1}
+\end{array} \right) 
+\end{equation*}
+\begin{equation*}
+M^{T} = \left( \begin{array}{cc}
+\left( \frac{\partial q'}{\partial q} \right)^{T} & \left( \frac{\partial q'}{\partial p} \right)^{T} \\ 
+\left( \frac{\partial P'}{\partial q} \right)^{T} & \left( \frac{\partial P'}{\partial p} \right)^{T}
+\end{array} \right) = \left( \begin{array}{cc}
+(-D^{-1} E)^{T} & (D^{-1})^{T} \\ 
+-D + (GD^{-1}E)^{T}  & (-G D^{-1})^{T}
+\end{array} \right)
+\end{equation*}
+
+Calcoliamo ora $ M^{T} J M $
+
+\begin{equation*}
+\begin{split}
+& M^{T} J M =
+\\
+& = \left( \begin{array}{cc}
+-E{(D^{-1})}^T & -D+E{(D^{-1})}^T G \\ 
+(D^{-1})^T & -(D^{-1})^T G
+\end{array} \right)
+\left( \begin{array}{cc}
+0 & I \\ 
+-I & 0
+\end{array} \right)
+ \left( \begin{array}{cc}
+-D^{-1}E & D^{-1} \\ 
+-D^T + GD^{-1} E & -GD^{-1}
+\end{array} \right) =
+\\
+& = \left( \begin{array}{cc}
+-E{(D^{-1})}^T & -D+E{(D^{-1})}^T G \\ 
+(D^{-1})^T & -(D^{-1})^T G
+\end{array} \right)
+ \left( \begin{array}{cc}
+-D^{-1} + GD^{-1}E & D^{-1} \\ 
+D^{-1} E & -D^{-1}
+\end{array} \right) =
+\\
+& = 
+ \renewcommand*{\arraystretch}{3}
+\left( \begin{array}{c | c}
+\begin{aligned}
+E{(D^{-1})}^T - E{(D^{-1})}^T GD^{-1} + \\ - D D^{-1} E + E{(D^{-1})}^T GD^{-1} E
+\end{aligned}
+&
+\begin{aligned}
+E{(D^{-1})}^T GD^{-1} + DD^{-1} + \\ - E{(D^{-1})}^T GD^{-1}
+\end{aligned}
+\\
+\hline
+\begin{aligned}
+{(D^{-1})}^T D^T + {(D^{-1})}^T GD^{-1} E + \\ + {(-D^{-1})}^T G D^{-1} E
+\end{aligned}
+&
+\begin{aligned}
+-{(D^{-1})}^T G D^{-1} + \\ + (-D^{-1}) G (-D^{-1})
+\end{aligned}
+\end{array} \right) =
+\\
+&=
+\left( \begin{array}{cc}
+0 & I \\ 
+-I & 0
+\end{array} \right) = J
+\end{split}
+\end{equation*}
+
+\begin{flushright}
+$\square$
+\end{flushright}

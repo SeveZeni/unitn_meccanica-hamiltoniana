@@ -1,0 +1,325 @@
+\section{Caratterizzazione di trasformazioni di coordinate che preservano la struttura ``Hamiltoniana'' delle equazioni}
+\setcounter{equation}{0}
+
+Trasformazioni di coordinate del tipo
+
+\begin{equation} \label{eq:trasfLegendre_inv2}
+  \begin{cases}
+    t' = t \\ q'^k = q'^k (t, q^r, P_r) \\ P'_k = P'_k (t, q^r, P_r)
+  \end{cases}
+  k = 1, \dots,n
+\end{equation}
+
+tali che \textit{ogni} sistema avente struttura della forma
+
+\begin{equation} \label{eq:Hamiltoniana2}
+  \begin{cases}
+    \frac{d q^k}{d t} = \frac{\partial H (t, q^r, P_r)}{\partial P_k}\\
+    \frac{d P_k}{d t} = - \frac{\partial H (t, q^r, P_r)}{\partial q^k}
+  \end{cases}
+  k = 1, \dots, n
+\end{equation}
+
+(\textit{struttura Hamiltoniana})\textit{ mantenga la sua struttura}, nel senso che, fatte nelle equazioni differenziali ($ \ref{eq:Hamiltoniana2} $) le sostituzioni date da ($ \ref{eq:trasfLegendre_inv2} $), o meglio, della sua inversa, possa essere scritto ancora in forma Hamiltoniana, cioè nella forma
+
+\begin{equation} \label{eq:Hamiltoniana'2} %FIX nome equazione
+  \begin{cases}
+    \frac{d q'^k}{d t} = \frac{\partial H' (t, q'^r, P'_r)}{\partial P'_k}\\
+    \frac{d P'_k}{d t} = - \frac{\partial H' (t, q'^r, P'_r)}{\partial q'^k}
+  \end{cases}
+  k = 1, \dots, n
+\end{equation}
+
+con $ H' $ opportuna funzione delle nuove variabili.\\
+Notare che, in generale, $ H' = H' (t, q'^r, P'_r) $ \textit{non} risulta essere la rappresentazione nelle nuove variabili $ t, q'^r, P'_r $ dell'Hamiltoniana $ H (t, q^r, P_r) $.\\
+Notare inoltre che siamo interessati a caratterizzare trasformazioni del tipo ($\ref{eq:trasfLegendre_inv2}$) per le quali la presenza della struttura si abbia per \textit{ogni} sistema di equazioni differenziali del tipo ($\ref{eq:Hamiltoniana2}$), ovvero per ogni sistema Hamiltoniano, ovvero per ogni scelta dell'Hamiltoniana $ H $.\\
+Per alleggerire la trattazione si introduce la notazione seguente
+
+\begin{equation}
+  \uline{z} =
+  \begin{pmatrix}
+    q^1 \\ \vdots \\ \vdots \\ q^n \\ P_1 \\ \vdots \\ \vdots \\ P_n
+  \end{pmatrix} \qquad
+  J =
+  \begin{pmatrix}
+    0      & \cdots & 0      & 1      & 0      & \cdots & 0 \\
+    \vdots &        &        & \ddots & \ddots & \ddots & \vdots \\
+    \vdots &        &        &        & \ddots & \ddots & 0 \\
+    0      & \cdots & \cdots & \cdots & \cdots & 0      & 1 \\
+    -1     & 0      & \cdots & \cdots & \cdots & \cdots & 0\\
+    0      & \ddots & \ddots &        &        &        & \vdots \\
+    \vdots & \ddots & \ddots & \ddots &        &        & \vdots \\
+    0      & \cdots & 0      & -1     & 0      & \cdots & 0 \\
+  \end{pmatrix}_{2n\times2n}
+\end{equation}
+
+per cui il sistema ($\ref{eq:Hamiltoniana2}$) si può rappresentare più compattamente nella forma
+
+\begin{equation} \label{eq:Hamiltoniana_vett2}
+  \frac{d \uline{z}}{d t} - J \frac{\partial H}{\partial \uline{z}} = \uline{0}
+\end{equation}
+
+in cui $ \frac{\partial H}{\partial \uline{z}} $ indica il vettore colonna formato dalle derivate parziali di $ H(t, q^r, P_r) $ rispetto alle $ 2n $ coordinate $ q^1, \dots, q^n,P_1, \dots, P_n $.
+La trasformazione del tipo ($ \ref{eq:trasfLegendre_inv2} $) verrà indicata nella forma
+
+\begin{equation} \label{eq:trasfLegendre_inv_vett2}
+  \begin{cases}
+    t' = t \\ \uline{z}' = \uline{z}'(t, \uline{z})
+  \end{cases}
+\end{equation}
+
+con inversa
+
+\begin{equation} \label{eq:trasfLegendre_vett2}
+  \begin{cases}
+    t = t' \\ \uline{z} = \uline{z}(t', \uline{z}')
+  \end{cases}
+\end{equation}
+
+Il problema che ci stiamo ponendo è perciò quello di caratterizzare trasformazioni del tipo ($ \ref{eq:trasfLegendre_inv_vett2} $) (o ($ \ref{eq:trasfLegendre_vett2} $)) tali che \textit{ogni} sistema di equazioni differenziali del tipo dato dalla ($ \ref{eq:Hamiltoniana_vett2} $) si possa scrivere nella forma
+
+\begin{equation} \label{eq:Hamiltoniana'_vett2}
+  \frac{d \uline{z}'}{d t} - J \frac{\partial H'}{\partial \uline{z}'} = \uline{0}
+\end{equation}
+
+con $ H' = H' (t, \uline{z}') $ funzione opportuna. Ricordiamo quanto già detto, e cioè che $ H'\left(t, \uline{z}'(t, \uline{z})\right) $ in generale \textit{non} coincide con $ H (t, \uline{z}) $. \\
+
+
+Sia
+\begin{equation*}
+  M = M(t, \uline{z}') = M_{\alpha, \beta}(t, \uline{z}') = \left( \frac{\partial z_{\alpha}(t, \uline{z}')}{\partial z'_{\beta}}, \qquad \alpha, \beta = 1, \dots, 2n \right)_{2n \times 2n}
+\end{equation*}
+
+la matrice Jacobiana della trasformazione. Notare che $ t $ è trattato come un parametro.\\
+Procediamo alla trasformazione dalla ($ \ref{eq:Hamiltoniana_vett2} $) sotto il cambiamento di coordianate ($ \ref{eq:trasfLegendre_vett2} $).
+
+\begin{equation*}
+  \frac{\partial H(t, \uline{z})}{\partial z'_{\alpha}} = \sum_{\beta = 1}^{2n} \frac{\partial z_{\beta}(t, \uline{z}')}{\partial z'_{\alpha}} \frac{\partial H}{\partial \uline{z}_{\beta}} = \sum_{\beta = 1}^{2n} M_{\alpha, \beta}^T \frac{\partial H}{\partial z_{\beta}} \qquad \alpha = 1, \dots, 2n
+\end{equation*}
+
+\begin{equation} \label{eq:dH/dz'2}
+  \Rightarrow \frac{\partial H}{\partial \uline{z}'} = M^T \frac{\partial H}{\partial \uline{z}} \Rightarrow \frac{\partial H}{\partial \uline{z}} = (M^T)^{-1} \frac{\partial H}{\partial \uline{z}'}
+\end{equation}
+
+\begin{equation*}
+  \begin{split}
+    \frac{d z_{\alpha}}{d t} &= \frac{\partial z_{\alpha}(t, \uline{z}')}{\partial t} + \sum_{\beta = 1}^{2n} \frac{\partial z_{\alpha}(t, \uline{z}')}{\partial z'_{\beta}} \frac{d z'_{\beta}}{d t} \qquad \alpha = 1, \dots, 2n \\
+    &= \frac{\partial z_{\alpha}(t, \uline{z}')}{\partial t} + \sum_{\beta = 1}^{2n} M_{\alpha, \beta} \frac{d z'_{\beta}}{d t}
+  \end{split}
+\end{equation*}
+
+\begin{equation} \label{eq:dz/dt2}
+  \Rightarrow \frac{d \uline{z}}{d t} = \frac{\partial \uline{z}(t, \uline{z}')}{\partial t} + M \frac{d \uline{z}'}{d t}
+\end{equation}
+
+Usando la ($ \ref{eq:dH/dz'2} $) e la ($ \ref{eq:dz/dt2} $) il primo membro del sistema di equazioni ($ \ref{eq:Hamiltoniana_vett2} $) diventa
+
+\begin{equation} \label{eq:dz/dt-JdH/dz2}
+  \begin{split}
+    \frac{d \uline{z}}{d t} - J \frac{\partial H}{\partial \uline{z}} &= \frac{\partial \uline{z}(t, \uline{z}')}{d t} + M \frac{d \uline{z}'}{d t} - J (M^T)^{-1} \frac{\partial H}{\partial \uline{z}'} \\
+    &= M \left( \frac{d \uline{z}'}{d t} + M^{-1} \frac{\partial \uline{z}(t, \uline{z}')}{d t} - M^{-1}J(M^T)^{-1} \frac{\partial H}{\partial \uline{z}'} \right)
+  \end{split}
+\end{equation}
+
+pertanto la condizione che ogni sistema Hamiltoniano ($ \ref{eq:Hamiltoniana2} $) si possa scrivere nella forma ($ \ref{eq:Hamiltoniana'2} $) è che esista $ H' = H'(t, q', P') $ tale che
+
+\begin{equation} \label{eq:dz'/dtJ2}
+  \frac{d \uline{z}'}{d t} - J \frac{\partial H'}{\partial \uline{z}'} = \frac{d \uline{z}'}{d t} + M^{-1} \frac{\partial \uline{z}(t, \uline{z}')}{\partial t} - M^{-1} J (M^T)^{-1} \frac{\partial H}{\partial \uline{z}'}
+\end{equation}
+
+ovvero
+
+\begin{equation} \label{eq:-JdH'/dz'2}
+  - J \frac{\partial H'}{\partial \uline{z}'} = M^{-1} \frac{\partial \uline{z}(t, \uline{z}')}{\partial t} - M^{-1} J (M^T)^{-1} \frac{\partial H}{\partial \uline{z}'}
+\end{equation}
+
+Notare che nello scrivere la ($ \ref{eq:dz'/dtJ2} $) è stata omessa la matrice Jacobiana $ M $ presente nella ($ \ref{eq:dz/dt-JdH/dz2} $). Questo è lecito in quanto $ \uline{z} = \uline{z}(t, \uline{z}')$ è una trasformazione di coordinate e il suo Jacobiano è non nullo. L'omissione non altera l'equivalenza dei sistemi di equazioni ($ \ref{eq:Hamiltoniana_vett2} $) e ($ \ref{eq:Hamiltoniana'_vett2} $) essendo il secondo membro uguale a $ \uline{0} $ per entrambi.\\
+Dalla ($ \ref{eq:-JdH'/dz'2} $) abbiamo
+
+\begin{equation} \label{eq:partH'/partz'2}
+  \frac{\partial H'(t, \uline{z}')}{\partial \uline{z}'} = -J^{-1} M^{-1} \frac{\partial \uline{z}(t, \uline{z}')}{\partial t} + J^{-1} M^{-1} J (M^T)^{-1} \frac{\partial H}{\partial \uline{z}'}
+\end{equation}
+
+Detto $ \uline{s} = \uline{s}(t, \uline{z}') $ il secondo membro della ($ \ref{eq:partH'/partz'2} $), notiamo che esso è completamente determinato da $ H (t, \uline{z}) $ e dalla trasformazione $ \uline{z} = \uline{z}(t, \uline{z}') $; pertanto, in generale, \textit{non esisterà} una funzione $ H' = H' (t, \uline{z}') $ che deve, in sostanza, giocare il ruolo di \textit{``potenziale''} delle $ 2n $ componenti di $ \uline{s}(t, \uline{z}') $ che figurano a secondo membro della ($ \ref{eq:partH'/partz'2} $). In altre parole, l'esistenza di una $ H' (t, \uline{z}') $ soddisfacente la ($ \ref{eq:partH'/partz'2} $) si avrà solo se il secondo membro $ \uline{s}(t, \uline{z}') $ \textit{soddisferà opportune condizioni di integrabilità}. Queste condizioni, che devono essere verificate per \textit{ogni} $ H' (t, \uline{z}') $, caratterizzeremo le trasformazioni ($ \ref{eq:trasfLegendre_inv2} $) (o ($ \ref{eq:trasfLegendre_inv_vett2} $)) che stiamo cercando.\\
+
+
+Posto
+
+\begin{equation} \label{15}
+  Q (t, \uline{z}') = -J^{-1} M^{-1}
+\end{equation}
+
+\begin{equation} \label{16}
+  P (t, \uline{z}') = J^{-1} M^{-1} J (M^{T})^{-1}
+\end{equation}
+
+la ($ \ref{eq:partH'/partz'2} $) si riscrive nella forma
+
+\begin{equation}
+  \frac{\partial H'}{\partial \uline{z}} = Q(t,\uline{z}')\frac{\partial \uline{z}(t,\uline{z}')}{\partial t} + P(t,\uline{z}') \frac{\partial H}{\partial \uline{z}'}
+\end{equation}
+
+ovvero, in componenti
+
+\begin{equation}
+  \frac{\partial H'}{\partial {z'}_{\alpha} } = \sum_{\beta = 1}^{2n} Q_{\alpha \beta}(t, \uline{z}') \frac{\partial z_\beta(t, \uline{z}')}{\partial t} + \sum_{\beta = 1}^{2n} P_{\alpha\beta}(t, \uline{z}') \frac{\partial H}{\partial {z'}_\beta}
+\end{equation}
+
+per cui le condizioni di integrabilità (locale), ovvero le condizioni di esistenza (locale) di un ``potenziale'' $ H' (t, \uline{z}') $ sono
+
+\begin{equation}
+  \frac{\partial}{\partial z'_\mu} \left[ Q_{\alpha \beta} \frac{\partial z_\beta}{\partial t} + P_{\alpha \beta} \frac{\partial H}{\partial z'_\beta} \right] = \frac{\partial}{\partial z'_\alpha} \left[ Q_{\mu \beta} \frac{\partial z_\beta}{\partial t} + P_{\mu \beta} \frac{\partial H}{\partial z'_\beta} \right] \qquad \forall \mu,\alpha = 1, \dots , 2n
+\end{equation}
+
+\begin{equation} \label{20}
+  \begin{split}
+    \frac{\partial Q_{\alpha\beta} }{\partial z'_\mu} \frac{\partial z_\beta }{\partial t} + Q_{\alpha \beta} \frac{\partial^2 z_\beta}{\partial z'_\mu \partial t} + \frac{\partial P_{\alpha \beta} }{\partial z'_\mu} \frac{\partial H }{\partial z'_\beta } + P_{\alpha \beta} \frac{\partial^2 H}{\partial z'_\mu \partial z'_\beta} =\\
+    = \frac{\partial Q_{\mu \beta} }{\partial z'_\alpha} \frac{\partial z_\beta }{\partial t} + Q_{\mu \beta} \frac{\partial^2 z_\beta}{\partial z'_\alpha \partial t} + \frac{\partial P_{\mu \beta} }{\partial z'_\alpha} \frac{\partial H }{\partial z'_\beta } + P_{\mu \beta} \frac{\partial^2 H}{\partial z'_\alpha \partial z'_\beta} \qquad \forall \alpha, \mu = 1, \dots , 2n
+  \end{split}
+\end{equation}
+
+Osserviamo inanzitutto che, dovendo la condizione ($ \ref{20} $) valere per \textit{ogni} $ H (t, \uline{z}) $, si deve avere
+
+\begin{subequations}
+  \begin{align}
+    & P_{\alpha \beta} \frac{\partial^2 H}{\partial z'_\mu \partial z'_\beta} = P_{\mu \beta} \frac{\partial^2 H}{\partial z'_\alpha \partial z'_\beta} & \forall \alpha, \mu = 1, \dots , 2n\\
+    & \frac{\partial P_{\alpha \beta}}{\partial z'_\mu} \frac{\partial H}{\partial z'_\beta} = \frac{\partial P_{\mu \beta}}{\partial z'_\alpha} \frac{\partial H}{\partial z'_\beta} & \forall \alpha, \mu = 1, \dots , 2n
+  \end{align}
+\end{subequations}
+
+che sono soddisfatte solo se
+
+\begin{subequations}
+  \begin{align}
+    & P_{\alpha \beta} = 0 & \text{con } \alpha \neq \beta \\
+    & P_{\alpha \alpha} = P_{\beta \beta} & \forall \alpha, \beta = 1, \dots , 2n \\
+    & \frac{\partial P_{\alpha \beta}}{\partial z'_\mu} = \frac{\partial P_{\mu \beta}}{\partial z'_\alpha} & \forall \alpha, \beta, \mu = 1, \dots , 2n
+  \end{align}
+\end{subequations}
+
+e di conseguenza, la matrice $ P $ può differire dall'identità solo per un fattore scalare che non dipende da $ \uline{z}' $, e che può dipendere al più da $ t $.
+
+\begin{equation} \label{23}
+  P = k (t) I_{2n \times 2n}
+\end{equation}
+
+Pertanto la condizione di integrabilità ($ \ref{20} $) si riduce a 
+
+\begin{equation*}
+  \frac{\partial Q_{\alpha \beta}}{\partial z'_\mu} \frac{\partial z_\beta}{\partial t} + Q_{\alpha \beta} \frac{\partial^2 z_\beta}{\partial z'_\mu \partial t} =\frac{\partial Q_{\mu \beta}}{\partial z'_\alpha} \frac{\partial z_\beta}{\partial t} + Q_{\mu \beta} \frac{\partial^2 z_\beta}{\partial z'_\alpha \partial t} \qquad \forall \alpha, \mu = 1, \dots , 2n
+\end{equation*}
+
+ovvero
+
+\begin{equation} \label{24}
+  \frac{\partial}{\partial z'_\mu} \left( Q_{\alpha \beta} \frac{\partial z_\beta}{\partial t} \right) = \frac{\partial}{\partial z'_\alpha} \left( Q_{\mu \beta} \frac{\partial z_\beta}{\partial t} \right) \qquad \forall \alpha, \mu = 1, \dots , 2n.
+\end{equation}
+
+Dalla definizione ($ \ref{15} $) e ($ \ref{16} $) di $ P $ e $ Q $
+
+\begin{subequations}
+  \begin{align}
+    & J^{-1} M^{-1} J (M^T)^{-1} = P
+    & - J^{-1} M^{-1} = Q
+    \label{25a}
+  \end{align}
+
+si ha
+
+\begin{equation*}
+  - Q J (M^T)^{-1} = P
+\end{equation*}
+
+da cui, dato che $ J^{-1} = J^T = - J $, si ha
+
+\begin{equation}
+  P^{-1} Q = - (M^T) J^{-1} = M^T J 
+\end{equation}
+\end{subequations}
+
+e, ricordando la ($ \ref{23} $),
+
+\begin{equation*}
+  Q = k(t) M^T J
+\end{equation*}
+
+
+La condizione di integrabilità ($ \ref{24} $) si riscrive pertanto nel modo seguente:
+
+\begin{equation} \label{26}
+  \frac{\partial}{\partial {z'}_\mu} \left(M^T_{\alpha\lambda} J_{\lambda\beta} \frac{\partial z_\beta}{\partial t} \right) = \frac{\partial}{\partial {z'}_\alpha} \left(M^T_{\mu\lambda} J_{\lambda\beta} \frac{\partial z_\beta}{\partial t} \right) \qquad \forall \alpha, \mu = 1, \dots , 2n
+\end{equation}
+
+ovvero
+
+\begin{equation} \label{27}
+  \begin{split}
+    \cancel{ \frac{\partial M^T_{\alpha\lambda}}{\partial {z'}_\mu} } J_{\lambda\beta} \frac{\partial z_\beta}{\partial t} + M^T_{\alpha\lambda} J_{\lambda\beta} \frac{\partial^2 z_\beta}{\partial {z'}_\mu \partial t} = \\
+    = \cancel {\frac{\partial M^T_{\mu\lambda}}{\partial {z'}_\alpha} } J_{\lambda\beta} \frac{\partial z_\beta}{\partial t} + M^T_{\mu\lambda} J_{\lambda\beta} \frac{\partial^2 z_\beta}{\partial {z'}_\alpha \partial t} \qquad \forall \alpha, \mu = 1, \dots , 2n
+  \end{split}
+\end{equation}
+
+la semplificazione essendo dovuta al fatto che
+
+\begin{equation*}
+  \frac{M^T_{\alpha\lambda}}{\partial z'_\mu} = \frac{\partial}{\partial z'_\mu} \frac{\partial z_\lambda(t, \uline{z}')}{\partial z'_\alpha} = \frac{\partial}{\partial z'_\alpha} \frac{\partial z_\lambda(t, \uline{z}')}{\partial z'_\mu} = \frac{\partial M^T_{\mu\lambda}}{\partial z'_\alpha}
+\end{equation*}.
+
+La ($ \ref{27} $) diventa perciò, scambiando anche la derivata $ \frac{\partial}{\partial t} $ con $ \frac{\partial}{\partial z'_\mu} $ e $ \frac{\partial}{\partial z'_\alpha} $,
+
+\begin{equation*}
+  M^T_{\alpha\lambda} J_{\lambda\beta} \frac{\partial}{\partial t} \frac{\partial z_\beta(t, \uline{z}')}{\partial z'_\mu} = M^T_{\mu\lambda} J_{\lambda\beta} \frac{\partial}{\partial t} \frac{\partial z_\beta(t, \uline{z}')}{\partial z'_\alpha} \qquad \forall \alpha, \mu = 1, \dots , 2n
+\end{equation*}
+
+ovvero, ricordando la definizione della matrice jacobiana
+
+\begin{equation*}
+  M_{\beta\mu} = \frac{\partial z_\beta (t, \uline{z}')}{\partial z'_\mu} \qquad M_{\beta\alpha} = \frac{\partial z_\beta (t, \uline{z}')}{\partial z'_\alpha}
+\end{equation*}
+
+\begin{equation} \label{28}
+  M^T_{\alpha \lambda} J_{\lambda \beta} \frac{\partial M_{\beta \mu}}{\partial t} = M^T_{\mu \lambda} J_{\lambda \beta} \frac{\partial M_{\beta \alpha}}{\partial t} \qquad \forall \alpha, \mu = 1, \dots , 2n
+\end{equation}
+
+Riassumendo, la condizione di integrabilità ($ \ref{27} $) è:
+
+\begin{equation} \label{29}
+  M^T J \frac{\partial M}{\partial t} = \left( M^T J \frac{\partial M}{\partial t} \right)^T
+\end{equation}
+
+(notare che, nella ($ \ref{28} $), $ \alpha $ e $ \mu $ nel primo e secondo membro risultano scambiati).\\
+Operando ancora sulla ($ \ref{29} $) si ha
+
+\begin{equation*}
+  \begin{split}
+    M^T J \frac{\partial M}{\partial t} & = \left( M^T J \frac{\partial M}{\partial t} \right)^T \\
+    & = \frac{\partial M^T}{\partial t} J^T M \\
+    & = \frac{\partial M^T}{\partial t} (-J) M \\
+    & = -\frac{\partial M^T}{\partial t} J M
+  \end{split}
+\end{equation*}
+
+\begin{equation*}
+  \begin{split}
+    &\Rightarrow M^T J \frac{\partial M}{\partial t} + \frac{\partial M^T}{\partial t} J M = 0 \\
+    &\Rightarrow \frac{\partial }{\partial t}(M^T J M) = 0 
+  \end{split}
+\end{equation*}
+
+Pertanto $ M^T J M $ non può dipendere esplicitamente da $ t $. Ricordando la definizione di $ P $ data dalla ($ \ref{16} $) e dalla ($ \ref{25a} $), anche $ P $ non dipende esplicitamente da $ t $, per cui
+
+\begin{equation*}
+  P = k I_{2n \times 2n} = J^{-1} M^{-1} J (M^T)^{-1} \qquad k = \text{cost}
+\end{equation*}
+
+da cui, facendo l'inversa di ambo i membri
+
+\begin{align*}
+  &\frac{1}{k} I = M^T J^{-1} M J & \quad \qquad \\
+  &\frac{1}{k} J^{-1} = M^T J^{-1} M & \quad \qquad 
+\end{align*}
+\begin{align}
+  &\frac{1}{k} J = M^T J M \quad & \text{$ k $ costante} \label{30}
+\end{align}
+
+Pertanto la caratterizzazione (locale) delle trasformazioni che preservano la struttura Hamiltoniana di ogni sitema hamiltoniano è che lo jacobiano soddisfi la condizione ($ \ref{30} $). Notare che questa è una caratterizzazione più \textit{debole} che la trasformazione $ \dag [\dots] \dag $ simplettica ($ M^T J M = J $).

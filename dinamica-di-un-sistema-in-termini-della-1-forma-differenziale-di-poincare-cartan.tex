@@ -1,0 +1,159 @@
+\subsection{Dinamica di un sistema in termini della $ 1 $-forma differenziale di Poincaré-Cartan}
+
+\begin{equation*}
+\begin{split}
+\text{\large$\theta$}_{\Lagr} &= \Lagr dt + \frac{\partial \Lagr}{\partial \dot{q}^k}\;\omega ^k = \Lagr dt + \frac{\partial \Lagr}{\partial \dot{q}^k}(dq^k-\dot{q}^k dt)= -\left(\frac{\partial \Lagr}{\partial \dot{q}^k} \dot{q}^k - \Lagr \right)dt + \frac{\partial \Lagr}{\partial \dot{q}^k} dq^k=\\ &= -H(t,q,\dot{q})dt + \frac{\partial \Lagr}{\partial \dot{q}^k} dq^k
+\end{split}
+\end{equation*}
+
+\hspace*{-0.11 cm}$\text{\large$\theta$}_{\Lagr}$ è detta $ 1 $-forma di Poincaré-Cartan su $ j_1 (\mathcal{V}_{n+1}) $ associata alla Lagrangiana $ \Lagr $.
+
+\begin{equation*}
+\begin{split}
+d\text{\large$\theta$}_{\Lagr} &= d\Lagr \wedge dt + d \left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right) \wedge \omega ^k + \frac{\partial \Lagr}{\partial \dot{q}^k} d \omega ^k\\
+&= d\Lagr \wedge dt + d \left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right) \wedge \omega ^k - \frac{\partial \Lagr}{\partial \dot{q}^k} d \dot{q}^k \wedge dt\\
+&= \frac{d \Lagr}{dq^k} dq^k \wedge dt + \cancel{\frac{\partial \Lagr}{\partial \dot{q}^k} d \dot{q}^k \wedge dt} + d \left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right) \wedge \omega ^k - \cancel{\frac{\partial \Lagr}{\partial \dot{q}^k} d \dot{q}^k \wedge dt}\\
+&= \frac{d \Lagr}{dq^k} dq^k \wedge dt + d \left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right) \wedge \omega ^k\\
+&= \frac{d \Lagr}{dq^k} \omega ^k \wedge dt + d \left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right) \wedge \omega ^k
+\end{split}
+\end{equation*}
+
+Posto $ Z = \frac{\partial}{\partial t} + y^i \frac{\partial}{\partial q^i} + Z^i \frac{\partial}{\partial \dot{q}^i} $ la condizione $ Z \rfloor \theta_{\Lagr} = 0 $ diventa
+
+\begin{equation*}
+\begin{split}
+0 &= Z \rfloor \left[\frac{\partial \Lagr}{\partial q^k} \omega^k \wedge dt + d \left( \frac{\partial \Lagr}{\partial \dot{q}^k} \right) \wedge \omega^k \right]\\
+&= \frac{\partial \Lagr}{\partial q^k} \left[ \left( Z \rfloor \omega^k \right) dt - \langle Z, dt\rangle \omega^k \right] + \langle Z, d \left( \frac{\partial \Lagr}{\partial \dot{q}^k} \right) \rangle \omega^k -d \left( \frac{\partial \Lagr}{\partial \dot{q}^k} \right) Z \rfloor \omega^k
+\end{split}
+\end{equation*}
+
+ora $ Z \rfloor \omega^k = \langle Z, dq^k - \dot{q}^k dt \rangle = y^k - \dot{q}^k $, mentre $ \langle Z, dt \rangle = 1 $ per cui si ha:
+
+% INIZIO PAGINA 13
+
+\begin{equation*}
+\begin{split}
+0&=\frac{\partial \Lagr}{\partial \dot{q}^k}(y^k - \dot{q}^k)dt - \frac{\partial \Lagr}{\partial q^k}w^k + Z \left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right) w^k - d\left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right)(y^k - \dot{q}^k) \\
+& =\left[ Z \left( \frac{\partial \Lagr}{\partial \dot{q}^k}\right) - \frac{\partial \Lagr}{\partial q^k} \right] w^k + \frac{\partial \Lagr}{\partial \dot{q}^k}(y^k - \dot{q}^k) dt - d \left( \frac{\partial \Lagr}{\partial \dot{q}^k}\right) (y^k - \dot{q}^k)
+\end{split}
+\end{equation*}
+
+Sviluppando l'ultimo termine
+
+\begin{equation*}
+- d\left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right)(y^k- \dot{q}^k) = - \left[\frac{\partial^2 \Lagr}{\partial t \partial \dot{q}^k}dt + \frac{\partial^2 \Lagr}{\partial q^r \partial \dot{q}^k}dq^r + \frac{\partial^2 \Lagr}{\partial \dot{q}^r \partial \dot{q}^k}d\dot{q}^r\right](y^k- \dot{q}^k)
+\end{equation*}
+
+si vede che esso è l'unico ad avere componenti lungo $d\dot{q}^r$ (si assuma, ad esempio, di usare la base $ \{dt, w^k=dq^k - \dot{q}^kdt, d\dot{q}^k\} $ per le forme differenziali su $j_1(\mathcal{V}_{n+1})$). \\
+La condizione $Z \rfloor d \theta_{\Lagr} = 0$ implica pertanto che il termine $ - d \left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right)(y^k - \dot{q}^k) $ debba essere nullo e, nell'ipotesi di non singolarità di $ \Lagr $ $ \left(\Leftrightarrow det \left( \frac{\partial^2 \Lagr}{\partial \dot{q}^r \partial \dot{q}^k}\right) \neq 0 \right)$ che $ y^k = \dot{q}^k $. \\
+Pertanto la condizione $ Z \rfloor d \theta_{\Lagr} = 0 $ si riduce a
+\begin{equation*}
+\left(Z\left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right)- \frac{\partial \Lagr}{\partial q^k}\right)w^k = 0
+\end{equation*}
+ovvero
+\begin{align*}
+&Z\left(\frac{\partial \Lagr}{\partial \dot{q}^k}\right)- \frac{\partial \Lagr}{\partial q^k} = 0	&k = 1, \dots , n
+\end{align*}
+\\ 
+Risulta pertanto provato il fatto seguente: data $ \Lagr = \Lagr (t, q^r, \dot{q}^r) $ e definita la $ 1 $-forma di Poincaré-Cartan $ \theta_{\Lagr} $, le condizioni
+
+\begin{equation*}
+\begin{cases}
+Z \rfloor d \theta_{\Lagr} = 0 \\
+\langle Z,dt \rangle =1 \quad \Leftrightarrow \quad Z = \frac{\partial}{\partial t} + y^i \frac{\partial}{\partial q^i} + Z^i \frac{\partial}{\partial \dot{q}^i}\\
+\end{cases}
+\end{equation*}
+
+determinano univocamente il campo vettoriale dinamico $ Z = \frac{\partial}{\partial t} + \dot{q}^i \frac{\partial}{\partial q^i} + Z^i (t, q, \dot{q}) \frac{\partial}{\partial \dot{q}^k} $ che \textit{geometrizza} le equazioni di Lagrange. \\
+Quanto visto fino ad ora può essere riscritto in linguaggio Hamiltoniano. Detta
+
+\begin{equation*}
+\theta_H = P_i dq^i - H (t, q^k, P_k) dt
+\end{equation*}
+
+la $ 1 $-forma di Poincaré-Cartan associata all'Hamiltoniana $ H $, mostriamo che il campo vettoriale dello spazio tempo delle fasi che \textit{geometrizza} la meccanica Hamiltoniana
+
+\begin{equation*}
+Z = \frac{\partial}{\partial  t} + \frac{\partial H}{\partial P_i}\frac{\partial}{\partial q^i} - \frac{\partial H}{\partial q^i}\frac{\partial}{\partial P_i} \quad \Leftrightarrow \quad 
+\begin{cases}
+\frac{dq^i}{dt} = \frac{\partial H}{\partial P_i}\\
+\frac{dP_i}{dt} = - \frac{\partial H}{\partial q^i}
+\end{cases}
+\end{equation*}
+
+è esprimibile intrinsecamente attraverso le condizioni
+
+\begin{equation*}
+\begin{cases}
+Z \rfloor d \theta_{H} = 0 \\
+\langle Z,dt \rangle =1
+\end{cases}
+\end{equation*}
+
+Osserviamo che la condizione $ \langle Z,dt \rangle =1 $ impone che la componente lungo $ \frac{\partial}{\partial t} $ sia uguale a $ 1 $. Partiamo perciò da un campo $ Z $ del tipo
+
+\begin{equation*}
+Z = \frac{\partial}{\partial  t} + Z^i\frac{\partial}{\partial q^i} + Z_i\frac{\partial}{\partial P_i}
+\end{equation*}
+
+e imponiamo la condizione $ Z \rfloor d \theta_{H} = 0 $
+
+\begin{equation*}
+\begin{split}
+Z \rfloor d \theta_{H} &= \left( \frac{\partial}{\partial  t} + Z^i\frac{\partial}{\partial q^i} + Z_i\frac{\partial}{\partial P_i}\right) \rfloor (dP_k \wedge dq^k - dH(t, q^r, P_r) \wedge dt)\\
+&= \left( \frac{\partial}{\partial  t} + Z^i\frac{\partial}{\partial q^i} + Z_i\frac{\partial}{\partial P_i}\right) \rfloor \left(dP_k \wedge dq^k - \frac{\partial H}{\partial q^k}dq^k \wedge dt - \frac{\partial H}{\partial P_k}dP_k \wedge dt \right)\\
+&= \frac{\partial H}{\partial q^k}dq^k + \frac{\partial H}{\partial P_k}dP_k - Z^idP_i - Z^i \frac{\partial H}{\partial q^i}dt + Z_idq^i - Z_i\frac{\partial H}{\partial P_i}dt
+\end{split}
+\end{equation*}
+
+per cui la condizione $ Z \rfloor d \theta_{H} = 0 $ implica
+
+\begin{equation*}
+Z_i = - \frac{\partial H}{\partial q^i} \qquad e \qquad Z^i = \frac{\partial H}{\partial P_i}
+\end{equation*}
+
+ovvero
+
+\begin{equation*}
+Z = \frac{\partial}{\partial  t} + \frac{\partial H}{\partial P_i}\frac{\partial}{\partial q^i} - \frac{\partial H}{\partial q^i}\frac{\partial}{\partial P_i}
+\end{equation*}
+
+% INIZIO PAGINA 14
+
+Quanto visto precedentemente mostra che il campo dinamico $ Z $ \textit{più che dalla forma differenziale} $ \theta_H $ (o $ \theta_{\Lagr} $ in linguaggio lagrangiano) dipende \textit{dal suo differenziale} $ d \theta_H $ attraverso la condizione $ Z \rfloor d\theta_H = 0 $ (o da $ d\theta_{\Lagr} $ attraverso la condizione $ Z \rfloor d\theta_H = 0 $ in linguaggio lagrangiano). \footnote{Si potrebbe commentare questo fatto dicendo che $ \theta_H $ (o $ \theta_{\Lagr} $) è un ``potenziale'' per la dinamica.} \\
+Risulta pertanto completamente motivata l'introduzione della \textit{``condizione di Lie''} su una trasformazione di coordinate $ t, q^k, P_k \rightarrow t, q'^k, P'^k $. Se una trasformazione soddisfa la condizione di Lie, la forma differenziale
+
+\begin{equation*}
+\theta = P_i dq^i - H (t, q^r, P_r) dt
+\end{equation*}
+
+si esprime nelle nuove coordinate, nella forma
+
+\begin{equation*}
+\theta = P'_i dq'^i - H (t, q^r, P_r) dt + dF
+\end{equation*}
+
+ma
+
+\begin{equation*}
+d\theta = d (P_i dq^i - H dt) + ddF
+\end{equation*}
+e $ddF=0$ \footnote{L'aggiunta di un differenziale al ``potenziale'' non cambia la dinamica} per ogni $ F $, e il campo dinamico $ Z $ determinato da
+
+\begin{align*}
+&Z \rfloor (dP_i \wedge dq^i - H \wedge dt) = 0
+\\&\langle Z,dt\rangle = 1
+\end{align*}
+
+oppure da
+
+\begin{align*}
+&Z \rfloor (dP'_i \wedge dq'^i - H' \wedge dt) = 0
+\\ &\langle Z,dt\rangle = 1
+\end{align*}
+
+hanno la stessa truttura (Hamiltoniana) rappresentativa:
+
+\begin{equation*}
+Z= \frac{\de}{\de t}+\frac{\de H}{\de P_i} \frac{\de}{\de q^i}- \frac{\de H}{\de q^i} \frac{\de}{\de P_i} = \frac{\de}{\de t'} + \frac{\de H'}{\de P'_i} \frac{\de}{\de q'^i} - \frac{\de H'}{\de q'^i} \frac{\de}{\de P'_i}
+\end{equation*}

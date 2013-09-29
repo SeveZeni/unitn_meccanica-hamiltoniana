@@ -1,0 +1,100 @@
+\section{Trasformazione di Legendre $ t, q^k, \dot{q}^k \longleftrightarrow t, q^k, P_k $}
+
+Siano $ t, q^r, \dot{q}^r $ coordinate naturali sullo spazio-tempo degli stati cinetici, $ \Lagr = \Lagr (t, q^r, \dot{q}^r) $ la funzione Lagrangiana e
+
+\begin{equation}
+  \frac{d}{dt} \frac{\partial \Lagr}{\partial \dot{q}^k} - \frac{\partial \Lagr}{\partial q^k} = 0 \qquad k = 1, \dots, n
+\end{equation}
+
+le equazioni di Lagrange. \\
+Consideriamo la trasformazione di coordinate
+
+\begin{subnumcases}{\label{eq:trasfLegendre}}
+  t = t \\
+  q^k = q^k & k = 1, \dots, n \\
+  P_k = P_k (t, q^r, \dot{q}^r) = \frac{\partial \Lagr (t, q^r, \dot{q}^r)}{\partial \dot{q}^k} \label{eq:trasfLegendre_c}
+\end{subnumcases}
+
+detta \textit{trasformazione di Legendre}, che ammette inversa nella forma
+
+\begin{subnumcases} {\label{eq:trasfLegendre_inv}}
+  t = t \\
+  q^k = q^k & k = 1, \dots, n \\
+  \dot{q}^k = \dot{q}^k(t, q^r, P_r)
+\end{subnumcases}
+
+in virtù del fatto che
+
+\begin{equation*}
+  det\left(\frac{\partial P_k}{\partial \dot{q}^r}\right) = det\left(\frac{\partial}{\partial \dot{q}^r}\frac{\partial \Lagr}{\partial \dot{q}^k}\right) \neq 0.
+\end{equation*}
+
+Ricordiamo la definizione dell'integrale generalizzato dell'energia
+
+\begin{equation}
+  H = H (t, q^r, \dot{q}^r) = \frac{\partial \Lagr}{\partial \dot{q}^k} \dot{q}^k - \Lagr
+\end{equation}
+
+riguardato, ovviamente, come funzione delle coordinate $ t, q^r, \dot{q}^r $. Usando la ($ \ref{eq:trasfLegendre_inv} $) è possibile esprimere $ H $ in funzione delle variabili $ t, q^k, P_k $
+
+\begin{equation} \label{eq:Hamiltoniana}
+  \begin{split}
+    H &= H(t, q^k, P_k) = H\left(t, q^k, \dot{q}^k(t, q^r, P_r)\right)
+    \\
+    &= \frac{\partial \Lagr \left(t, q^k, \dot{q}^k(t, q^r, P_r)\right)}{\partial \dot{q}^k} \dot{q}^k - \Lagr \left(t, q^k, \dot{q}^k(t, q^r, P_r)\right)
+    \\
+    &= P_k \dot{q}^k(t, q^r, P_r) - \Lagr \left(t, q^k, \dot{q}^k(t, q^r, P_r)\right)
+  \end{split}
+\end{equation}
+
+l'ultima relazione ottenuta usando ($ \ref{eq:trasfLegendre_c} $).\\
+Sono vere le identità seguenti, dedotte dalla ($ \ref{eq:Hamiltoniana} $)
+
+\begin{subequations} \label{eq:trasfHamiltoniana}    %FIX label
+  \begin{align}
+    \frac{\partial H (t, q^r, P_r)}{\partial t} &= P_k \frac{\partial \dot{q}^k}{\partial t} - \frac{\partial \Lagr}{\partial t} - \frac{\partial \Lagr}{\partial \dot{q}^k} \frac{\partial \dot{q}^k}{\partial t} = - \frac{\partial \Lagr}{\partial t} \label{eq:trasfHamiltoniana_a}\\
+    \frac{\partial H (t, q^r, P_r)}{\partial q^r} &= P_k \frac{\partial \dot{q}^k}{\partial q^r} - \frac{\partial \Lagr}{\partial q^r} - \frac{\partial \Lagr}{\partial \dot{q}^k} \frac{\partial \dot{q}^k}{\partial q^r} = - \frac{\partial \Lagr}{\partial q^r} \label{eq:trasfHamiltoniana_b}\\
+    \frac{\partial H (t, q^r, P_r)}{\partial P_r} &= \frac{\partial P_k}{\partial P_r} \dot{q}^k + P_k \frac{\partial \dot{q}^k}{\partial P_r} - \frac{\partial \Lagr}{\partial \dot{q}^k} \frac{\partial \dot{q}^k}{\partial P_r} = \dot{q}^r \label{eq:trasfHamiltoniana_c}
+  \end{align}
+\end{subequations}
+
+le semplificazioni derivanti dalla definizione ($ \ref{eq:trasfLegendre_c} $). \\
+La ($ \ref{eq:trasfHamiltoniana_c} $) permette, tra l'altro, di scrivere la trasformazione di Legendre diretta e inversa nella forma
+
+\begin{equation} \label{eq:trasfLegendre_inv_compl}
+  \begin{cases}
+    t = t \\
+    q^k = q^k \\
+    P_k = \frac{\partial \Lagr (t, q^r, \dot{q}^r)}{\partial \dot{q}^k}
+  \end{cases}
+  k = 1, \dots, n \quad
+  \begin{cases}
+    t = t \\
+    q^k = q^k\\
+    \dot{q}^k = \frac{\partial H(t, q^r, P_r)}{\partial P_k}
+  \end{cases}
+  k = 1, \dots, n
+\end{equation}
+
+Usando ($ \ref{eq:trasfLegendre_c} $), ($ \ref{eq:trasfHamiltoniana_b} $), ($ \ref{eq:trasfHamiltoniana_c} $) si ha una riscrittura delle equazioni di Lagrange nella forma
+
+\begin{equation}
+  \begin{cases}
+    \frac{d q^k}{d t} = \frac{\partial H(t, q^r, P_r)}{\partial P_k}\\
+    \frac{d P_k}{d t} = - \frac{\partial H(t, q^r, P_r)}{\partial q^k}
+  \end{cases}
+  k = 1, \dots, n 
+\end{equation}
+
+che diciamo \textit{Hamiltoniana}.\\
+Ricordando che la derivata lungo i moti di $ H $ è
+
+\begin{equation*}
+  \left. \frac{d}{d t} \right|_{lungo ~ i ~ moti} H = - \frac{\partial \Lagr (t, q^r, \dot{q}^r)}{\partial t}
+\end{equation*}
+usando la ($ \ref{eq:trasfHamiltoniana_a} $) si ha che
+\begin{equation*}
+  \left. \frac{d}{d t} \right|_{lungo ~ i ~ moti} H = \frac{\partial H(t, q^r, P_r)}{\partial t}
+\end{equation*}
+
+ovvero che $ H (t, q^r, P_r) $ è un integrale primo se non dipende (esplicitamente) da $ t $.

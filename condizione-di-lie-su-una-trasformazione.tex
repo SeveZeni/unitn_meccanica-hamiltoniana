@@ -1,0 +1,128 @@
+\section{Condizione di Lie su una trasformazione $ t' = t$, $ q'^k = q'^k(t,q,P) $, $P'_k = P'_k (t,q,P)$}
+\setcounter{equation}{0}
+
+\begin{definizione}
+Una trasformazione di coordinate
+
+\begin{equation}
+  \begin{cases}
+    t' = t \\
+    q'^k = q'^k (t, q^r, P_r) \\ 
+    P'_k = P'_k (t, q^r, P_r)
+  \end{cases}
+  \label{eq:eq1_condLie}
+\end{equation}
+
+si dice che \textit{verifica la condizione di Lie} se ogni forma diffrenziale avente la struttura seguente
+
+\begin{equation} \label{struttura_1}
+  \theta = P_i dq^i - H (t, q^r, P_r) dt
+\end{equation}
+
+con $ H = H (t, q^r, P_r) $ funzione arbitraria, se, nelle ``nuove'' variabili $ t, q'^r, P'_r $, può essere espressa nella forma
+
+\begin{equation}
+  \theta = {P'}_i {dq'}^i - H'(t, {q'}^r, {P'}_r) dt + dF
+  \label{struttura_2}
+\end{equation}
+
+con $ H' $ e $ F $ funzioni opportune.
+\end{definizione}
+
+Per comprendere bene il significato della definizione sopra data occorre osservare che la forma diffrenziale $ \theta $ ha una struttura molto particolare. Precisamente, detta
+
+\begin{equation*}
+  \theta_0 (t, q^r, P_r) dt + \theta_i (t, q^r, P_r) dq^i + \theta^i (t, q^r, P_r) dP_i
+\end{equation*}
+
+una generica forma differenziale sullo spazio riferito alle variabili $ t, q^r, P_r $, la forma $ \theta $ data dalla ($ \ref{struttura_1} $) risulta essere caratterizzata da
+
+\begin{equation*}
+  \begin{split}
+    & \theta_0 (t, q^r, P_r) = - H (t, q^r, P_r) \\
+    & \theta_i (t, q^r, P_r) = P_i \\
+    & \theta^i (t, q^r, P_r) = 0
+  \end{split}
+\end{equation*}
+
+Una trasformazione che verifica la condizione di Lie deve pertanto consentire una riscrittura di $ \theta $ data dalla ($ \ref{struttura_1} $) in una forma (quasi) strutturalmente simile, data dalla ($ \ref{struttura_2} $).
+Notare che:
+\begin{itemize}
+\item[-] la componente di $ \theta $ lungo $ dq'^i $ è $ P'_i $ (similmente al fatto che la componente di $ \theta $ lungo $ dq^i $ fosse $ P_i $)
+\item[-] la componente di $ \theta $ lungo $ dt $ è una nuova funzione, $ H' $, che, in generale, \textit{non coincide} con la rappresentazione della funzione $ H (t, q^r, P_r) $ nelle nuove variabili $ t, q'^r, P'_r $.
+\item[-] la componente di $ \theta $ lungo $ dP'_i $ è nulla.
+\item[-] $ F $ è una opportuna funzione.
+\end{itemize}
+
+Notare che, in generale, partendo dalla rappresentazione ($ \ref{struttura_1} $) di $ \theta $ e effettuata la trasformazione ($ \ref{eq:eq1_condLie} $)
+
+\begin{equation*}
+  \begin{cases}
+    t' = t \\
+    q'^k = q'^k (t, q^r, P_r) \\ 
+    P'_k = P'_k (t, q^r, P_r)
+  \end{cases}
+  \Rightarrow
+  \begin{cases}
+    dt' = dt \\
+    dq'^k = \frac{\partial q'^k}{\partial t} dt + \frac{\partial q'^k}{\partial q^r} dq^r + \frac{\partial q'^k}{\partial P_r} dP_r\\ 
+    dP'_k = \frac{\partial P'_k}{\partial t} dt + \frac{\partial P'_k}{\partial q^r} dq^r + \frac{\partial P'_k}{\partial P_r} dP_r
+  \end{cases}
+\end{equation*}
+
+non si ottiene una rappresentazione di $ \theta $ che si lascia inquadrare nella struttura data dalla ($ \ref{struttura_2} $). In pratica non si riesce a ottenere che
+
+\begin{equation*}
+  \theta - P'_i dq'^i + H' (t, q'^r, P'_r) dt
+\end{equation*}
+
+si possa scrivere come il differenziale di una opportuna funzione $ F $.
+
+% FINE PAGINA 7 - INIZIO PAGINA 8
+
+Le considerazioni ora fatte attribuiscono alla funzione $ F $ il ruolo di funzione che può essere scelta opportunamente in modo che $ \theta $ (quasi) preservi la sua struttura (a meno di un $ dF $, appunto). $ F $ risulta quindi ``determinata'' dalla trasformazione ($ \ref{eq:eq1_condLie} $), ovviamente nel caso in cui la ($ \ref{eq:eq1_condLie} $) verifichi la condizione di Lie. \\
+
+È possibile capovolgere questo atteggiamento, e precisamente, fare giocare a $ F $ il ruolo di ``funzione generatrice'' della trasformazione ($ \ref{eq:eq1_condLie} $).\\
+Per definitezza, assumeremo che $ F $ dipenda dalle variabili $ t, q^k, q'^k $. Notare che è rilevante al fine di costruire una trasformazione che $ F $ dipenda contemporaneamente da vecchie e nuove variabili (altre scelte possibili: $ F = F (t, q^r, P'^r) $, $ F = F (t, P_r, q'^r) $, $ F = F (t, P_r, P'_r) $). \\
+Il requisito che:
+
+\begin{equation*}
+  P_i dq^i - H dt = P'_i dq'^i - H' dt + dF
+\end{equation*}
+
+diventa:
+
+\begin{equation*}
+  P_i dq^i - H dt = P'_i dq'^i - H' dt + \frac{\partial F}{\partial t} dt + \frac{\partial F}{\partial q^i} dq^i + \frac{\partial F}{\partial q'^i} dq'^i
+\end{equation*}
+
+che implica:
+
+\begin{subequations} \label{eq:eq4_condlie}
+  \begin{align}
+    P_i &= \frac{\partial F(t,q^r, q'^r)}{\partial q^i} & i = 1, \dots , n \\
+    P'_i &= - \frac{\partial F(t,q^r, q'^r)}{\partial q'^i} & i = 1, \dots , n \\
+    H' &= H + \frac{\partial F(t,q^r, q'^r)}{\partial t}
+  \end{align}
+\end{subequations}
+
+Seguendo questo atteggiamento, assegnata arbitrariamente una $ F = F (t, q^r, q'^r) $, con la condizione che:
+
+\begin{equation}\label{eq:eq5_condlie}
+  det \left( \left.\frac{\partial P_i}{\partial q'^r} \right|_{t,q~cost} \right) = det \left( \frac{\partial^2 F(t,q^r, q'^r)}{\partial q'^k \partial q^i} \right) \neq 0
+\end{equation}
+
+in modo che la (\ref{eq:eq4_condlie}a) possa essere applicata nella forma 
+
+\begin{equation} \label{eq:eq6_condlie}
+  q'^k = q'^k (t, q^r, P_r)
+\end{equation}
+
+e quindi per la (\ref{eq:eq4_condlie}b) e per la (\ref{eq:eq6_condlie})
+
+\begin{equation} \label{eq:eq7_condlie}
+  P'_i = - \frac{\partial F (t, q^r, q'^r)}{\partial q'^i} \left(t, q^r, q'^r (t, q^s, P_s) \right)
+\end{equation}
+
+risulta determinata la trasformazione di coordinate dalle $ t, q^r, P_r $ alle 
+$ t' = t, q'^r, P'_r $ data appunto dalla ($ \ref{eq:eq6_condlie} $) e dalla ($ \ref{eq:eq7_condlie} $), che sarà detta la trasformazione di coordinate \textit{generata dalla funzione generatrice} $ F (t, q^i, q'^i) $.

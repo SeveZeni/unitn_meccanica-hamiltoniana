@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm} %importante: va DOPO amsmath
+\usepackage{amsfonts} %per scrivere N, Z, R... ecc 
+\usepackage{cancel}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+\usepackage{cases}
+\usepackage{caption}
+\usepackage{relsize}
+%\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{graphicx}
+%\usepackage{undertilde}
+
+
+% Macros define
+\DeclareMathOperator{\Lagr}{\mathcal{L}}
+\DeclareMathOperator{\de}{\partial}
+\newtheorem{definition}{Definizione}
+\newtheorem{theorem}{Teorema}
+\newtheorem{definizione}{Definizione}
+
+
+% Titlepage
+\begin{titlepage}
+\title{Formulazione Hamiltoniana della meccanica classica}
+\author{}
+\date{\today}
+\end{titlepage}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% trick to leave a blank page
+\newpage
+\mbox{}
+\thispagestyle{empty}
+\newpage
+
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\mbox{}
+\thispagestyle{empty}
+\newpage
+
+
+% Sections
+\input{trasformazione-di-legendre}
+\input{caratterizzazione-di-trasformazioni-che-preservano-la-struttura-hamiltoniana-delle-equazioni}
+\input{condizione-di-lie-su-una-trasformazione}
+\input{una-trasformazione-che-soddisfa-la-condizione-di-lie-e-simplettica}
+\input{legame-tra-1-forma-di-poincare-cartan-e-dinamica}
+\input{dinamica-di-un-sistema-in-termini-della-1-forma-differenziale-di-poincare-cartan}
+\input{teoria-di-hamilton-jacobi}
+\input{esercizi-sulla-teoria-di-hamilton-jacobi}
+\input{un-po-di-geometria-simplettica}
+\input{struttura-simplettica-del-fibrato-cotangente}
+\input{parentesi-di-poisson}
+\input{spazio-tempo-delle-fasi-e-struttura-di-poisson-di-tale-spazio}
+\input{trasformazione-di-legendre-vista-piu-geometricamente}
+\input{trasformazioni-canoniche-sul-cotangente-e-sullo-spazio-tempo-delle-fasi}
+\input{funzione-generatrice}
+\input{teorema-di-liuville-sulla-preservazione-del-volume-nello-spazio-delle-fasi-da-parte-della-dinamica-hamiltoniana}
+
+
+\end{document}

@@ -1,0 +1,125 @@
+\section{Teoria di Hamilton-Jacobi}
+\setcounter{equation}{0}
+
+Abbiamo visto che una funzione $ F = F (t, q^i, q'^i) $ con la proprietà che
+
+\begin{equation*}
+det \left( \frac{\de^2 F}{\de q^i \de q'^k}\right) \neq 0
+\end{equation*}
+
+può giocare il ruolo di funzione generatrice di una trasformazione
+
+\begin{equation}
+t' = t \qquad q'^k = q'^k (t, q^r, P_r) \qquad P'_k = P'_k (t, q^r, P_r)
+\end{equation}
+
+che preserva la struttura di ogni sistema Hamiltoniano. Precisamente, dalla condizione di Lie abbiamo che \\
+
+\begin{subnumcases}{}
+P_i= \frac{\de F (t,q^k,q'^k)}{\de q^i} \label{eq:ham_jac_2a}\\
+P'_i= - \frac{\de F (t,q^k,q'^k)}{\de q'^i} & i=1,\dots ,n\\
+H'= H + \frac{\de F (t,q^k,q'^k)}{\de t} \label{eq:ham_jac_2c}
+\end{subnumcases}
+
+e abbiamo visto che una trasformazione che soddisfa la condizione di Lie ha jacobiano $ M = M (t, q^r, P_r) $ che soddisfa $ M^T J M = J $. Di conseguenza una trasformazione che soddisfa la condizione di Lie preserva la struttura di ogni sistema Hamiltoniano.\\
+Nel seguito chiameremo \textit{canoniche} queste trasformazioni. \\
+
+% FINE PAGINA 14 - INIZIO PAGINA 15
+
+Il carattere \textit{non invariante} di $ H $ rispetto a trasformazioni canoniche (come risulta esplicitamente dalla ($ \ref{eq:ham_jac_2c} $)) può essere utilmente sfruttato, e precisamente è possibile porsi il problema di determinare una opportuna trasformazione canonica, generata da un'opportuna funzione generatrice $ F = F (t, q^k, q'^k) $, tale che la ``nuova'' Hamiltoniana $ H' = H' (t, q'^k, P'_k) $ risulti \textit{identicamente nulla}. \\
+Essendo la trasformazione canonica, la struttura Hamiltoniana del sistema verrà preservata e precisamente il sistema:
+
+\begin{equation*}
+\begin{cases}
+\frac{dq^k}{dt}= \frac{\de H (t, q^r, P_r)}{\de P_k}\\
+\frac{dP_k}{dt}= - \frac{\de H (t, q^r, P_r)}{\de q^k}
+\end{cases}
+k=1, \dots , n
+\end{equation*}
+
+dopo aver subito la trasformazione
+
+\begin{equation*}
+t' = t, \quad q'^k = q'^k (t, q^r, P_r), \quad P'_k = P'_k (t, q^r, P_r)
+\end{equation*}
+
+si potrà riscrivere ancora nella forma
+
+\begin{equation*}
+\begin{cases}
+\frac{dq'^k}{dt}= \frac{\de H' (t, q'^r, P'_r)}{\de P'_k}\\
+\frac{dP'_k}{dt}= - \frac{\de H' (t, q'^r, P'_r)}{\de q'^k}
+\end{cases}
+k = 1, \dots , n
+\end{equation*}
+
+Ora, se $ H' = H' (t, q'^r, P'_r) = 0 $
+
+\begin{equation*}
+\begin{cases}
+\frac{dq'^k}{dt}= \frac{\de H'}{\de P'_k} = 0\\
+\frac{dP'_k}{dt}= - \frac{\de H'}{\de q'^k} = 0
+\end{cases}
+k = 1, \dots , n
+\end{equation*}
+
+Pertanto, nelle variabili $ q'^k, P'_k $ ogni moto del sistema avrà una descrizione banale, e precisamente
+
+\begin{align*}
+q'^k (t) & = q'^k_0 \\
+P'_k (t) & = {P'_k}_0
+\end{align*}
+
+le quantità $ q'^k_0 $ e $ {P'_k}_0 $ dipendono dai $ 2n $ dati iniziali del problema.\\
+La soluzione del problema del moto è pertanto ricondotta alla determinazione del legame tra le variabili $ q'^k, P'_k $ e le variabili $ q^k, P_k $, ovvero alla trasformazione
+
+\begin{eqnarray*}
+q^k &= q^k(t,q'^k,P'_k) = q^k(t,q'^k_0,{P'_k}_0)\\
+P_k &= P_k(t,q'^k,P'_k) = P_k(t,q'^k_0,{P'_k}_0)
+\end{eqnarray*}
+
+La condizione che determina la $F=F(t,q^k,q'^k)$ tale che $H'(t,q'^k,P'_k)=0$ è, per la ($ \ref{eq:ham_jac_2c} $)
+
+\begin{equation*}
+0=H \left( t,q^k,P_k(t,q^r,q'^r) \right) + \frac{\de F(t,q^r,q'^r)}{\de t}
+\end{equation*}
+
+ovvero, per la ($ \ref{eq:ham_jac_2a} $)
+
+\begin{equation} \label{eq:ham_jac_3}
+0=H \left( t,q'^k,\frac{\de F(t,q^r,q'^r)}{\de q^k} \right) + \frac{\de F(t,q^r,q'^r)}{\de t}
+\end{equation}
+
+\begin{footnotesize}
+[Notare che si sono usate le coordinate $t,q^r,q'^r$, trattate come indipendenti, per esprimere tutte le quantità che compaiono nella relazione ($ \ref{eq:ham_jac_2c} $)].
+\end{footnotesize}
+\\
+
+L'equazione ($ \ref{eq:ham_jac_3} $) ha la natura di un'equazione alle derivate parziali del primo ordine, in cui
+
+\begin{enumerate}
+\item[] $t,q^k$ sono le variabili indipendenti
+\item[] $F$ è la funzione incognita
+\item[] $q'^k$ intervengono nella ($ \ref{eq:ham_jac_3} $) parametricamente
+\end{enumerate}
+
+Il ruolo dei parametri $q'^k$ sarà ben spiegato nelle righe seguenti.\\
+
+% INIZIO PAGINA 16
+
+Come già detto l'equazione
+
+\begin{equation} \label{eq:ham_jac_4}
+H \left( t,q^k,\frac{\de F}{\de q^k} \right) + \frac{\de F}{\de t}=0
+\end{equation}
+
+è alle derivate parziali del primo ordine, $ t, q^k $ sono variabili indipendenti e $ F $ la funzione incognita. Nessun dato ``al bordo'' è significativo, per cui la ($ \ref{eq:ham_jac_4} $) ha infinite soluzioni.
+
+Per i nostri scopi,  ovvero per costruire un trasformazione, della ($ \ref{eq:ham_jac_4} $) non basta però determinare una soluzione, ma occorre determinare una famiglia di soluzioni, parametrizzate dalle $n$ variabili $q'^k$ (Precisamente, ogni assegnazione della $n$-upla $q'^1,\dots,q'^n$ individua una soluzione della ($ \ref{eq:ham_jac_4} $)).\\
+Occorre che la dipendenza delle soluzioni della ($ \ref{eq:ham_jac_4} $) dai parametri $q'^n$ sia ``significativa'', ovvero che
+
+\begin{equation} \label{eq:ham_jac_5}
+det \left( \frac{\de^2 F}{\de q'^k \de q^i}\right) \neq 0
+\end{equation}
+
+Una famiglia di soluzioni $F(t,q^k,q'^1,\dots,q'^n)$ della ($ \ref{eq:ham_jac_4} $) è quello che nel gergo viene detto un \textit{integrale completo}, ovviamente quando la ($ \ref{eq:ham_jac_5} $) è soddisfatta. Noto un integrale completo della ($ \ref{eq:ham_jac_4} $) è possibile costruire la trasformazione  canonica che banalizza il sistema Hamiltoniano.

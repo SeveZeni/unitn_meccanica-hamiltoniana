@@ -1,0 +1,53 @@
+\section{Parentesi di Poisson in $T^* (M)$}
+\setcounter{equation}{0}
+
+Sia $ f : T^* (M) \rightarrow \mathbb{R} $ e
+
+\begin{equation}
+X_{df} = \frac{\partial f}{\partial x^i} \frac{\partial}{\partial y_j} -\frac{\partial f}{\partial y_j} \frac{\partial}{\partial x^i}
+\end{equation}
+
+il campo vettoriale su $ T^* (M) $ ottenuto definendo $ f $ e utilizzando l'isomorfismo dato dalla struttura simplettica (vedi pagina \pageref{pag:7_fibr_cot}). \\
+
+Possiamo definire, partendo da $ g : T^* (M) \rightarrow \mathbb{R} $
+
+\begin{equation}
+\left\lbrace f, g \right\rbrace = X_{df} (g) = \frac{\partial f}{\partial x^i} \frac{\partial g}{\partial y_j} - \frac{\partial f}{\partial y_j} \frac{\partial g}{\partial x^i}
+\end{equation}
+quella che si definisce come la \textit{parentesi di Poisson tra $ f $ e $ g $}. \\
+In particolare, date le coordinate \textit{naturali} $ x^i, y_j $ su $ T^* (M) $, si hanno le parentesi di Poisson \textit{fondamentali}
+
+\begin{equation}
+\begin{split}
+\left\lbrace x^i, x^k \right\rbrace = 0 \qquad \left\lbrace y_i, y_k \right\rbrace = 0 \\
+\left\lbrace x^i, y_k \right\rbrace = - \left\lbrace y_k, x^i \right\rbrace = \delta^i _k
+\end{split}
+\end{equation}
+
+Proprietà delle parentesi di Poisson:
+
+\begin{enumerate}
+\item antisimmetria: $\left\lbrace f,g \right\rbrace = - \left\lbrace g,f \right\rbrace \; \; \forall f,g \; \in \mathcal{F} (T^* (M))$
+\item bilinearità: $\forall \alpha, \beta \in \mathbb{R} \; \; \forall f, g, h, \; \in \mathcal{F} (T^* (M))$
+				\begin{itemize}
+				\item[] $\left\lbrace \alpha f+\beta g, h\right\rbrace= \alpha \left\lbrace f,h\right\rbrace + \beta \left\lbrace g,h \right\rbrace$
+				\item[] $\left\lbrace f,\alpha g + \beta \right\rbrace= \alpha \left\lbrace f,g\right\rbrace + \beta \left\lbrace f,h \right\rbrace$ \\ 
+				\end{itemize}
+\item Regola di Leibniz: $\left\lbrace f, g h \right\rbrace = \left\lbrace f, g \right\rbrace h + g \left\lbrace f, h \right\rbrace \qquad \forall f, g, h \in \mathcal{F} (T^* (M))$
+\item Assioma sulle funzioni composte \label{pag:assioma_funz_comp} : $ \varphi_{i}, \dots , \varphi_{k} \in \mathcal{F} (T^* (M)) \text{ e } g = g (\varphi_{i}, \dots , \varphi_{k}) $ 
+\begin{itemize} \item[]$\left\lbrace f,g \right\rbrace =  \sum_{\alpha = 1}^{k} \left\lbrace f,\varphi_{\alpha} \right\rbrace \frac{\partial g}{\partial \varphi_{\alpha}}$
+\end{itemize}
+\item Identità di Jacobi: $ \forall f, g, h \in \mathcal{F} (T^* (M)) $
+\begin{itemize}
+\item[] $ \left\lbrace \left\lbrace f, g \right\rbrace , h \right\rbrace + \left\lbrace \left\lbrace g, h \right\rbrace , f \right\rbrace + \left\lbrace \left\lbrace h, f \right\rbrace, g \right\rbrace = 0 $
+\end{itemize}
+\end{enumerate}
+
+\begin{align*}
+\begin{array}{cc}
+\text{Nota:}  &X_{d\left\lbrace f,g \right\rbrace} = X_{df} X_{dg} - X_{dg} X_{df}
+\\
+\\
+\text{ovvero} &X_{d\left\lbrace f,g \right\rbrace} = \left [ X_{df}X_{dg} \right]
+\end{array}
+\end{align*}

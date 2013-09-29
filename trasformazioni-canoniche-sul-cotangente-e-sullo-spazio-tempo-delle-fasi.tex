@@ -1,0 +1,222 @@
+\section{Trasformazioni canoniche sul cotangente e sullo spazio-tempo delle fasi}
+Esaminiamo preliminarmente il problema nello spazio cotangente $ T^* (M) $, $ M $ essendo una varietà differenziabile di dimensione $ m $. Come abbiamo visto, riferito $ M $ a coordinate locali $ x^1, \dots , x^m $, è possibile riferire $ T^* (M) $ a coordinate $ x^1, \dots , x^m , y_1, \dots , y_m $, dette \textit{naturali}, sulla base dell'identificazione seguente
+
+\begin{equation*}
+\eta \in T^* (M) \Longleftrightarrow \eta = y_i (r) (dx^i)_{\pi (\eta)}
+\end{equation*}
+
+Una trasformazione tra $ 2 $ sistemi di coordinate \textit{naturali} è, come abbiamo già visto, del tipo
+
+\begin{equation*}
+\begin{cases}
+x'^i = x'^i(x^1, \dots, x^m) \\
+y'_i = y_r \frac{\partial x^r}{\partial x'^i} \qquad \qquad x^r = x^r (x'^1, \dots , x'^m)
+\end{cases}
+\end{equation*}
+$ T^* (M) $ è dotato canonicamente di una struttura simplettica
+
+\begin{equation*}
+\Omega (X, Y) = X_i Y^i - X^i Y_i
+\end{equation*}
+
+dove
+
+\begin{equation*}
+\begin{cases}
+X = X^i\frac{\partial}{\partial x^i} + X_i\frac{\partial}{\partial y_i} \\
+Y = Y^i\frac{\partial}{\partial x^i} + Y_i\frac{\partial}{\partial y_i}
+\end{cases}
+\in T^* (M)
+\end{equation*}
+
+e che, per \textit{trasformazioni di coordinate naturali}, $ \Omega $ risulta invariante nella sua descrizione in coordinate, cioè
+
+\begin{equation*}
+\Omega (X, Y) =  X_i Y^i - X^i Y_i = X'_i Y'^i - X'^i Y'_i
+\end{equation*}
+
+% FINE PAGINA 28 - INIZIO PAGINA 29
+
+Ciò che vedremo è che $\Omega$ \textit{risulta invariante in forma rispetto a un gruppo di trasformazioni più generale del gruppo delle trasformazioni tra coordinate naturali}.\\
+Tale gruppo, che caratterizzeremo nelle pagine seguenti, sarà detto il gruppo delle \textit{trasformazioni canoniche}. \\
+
+\textit{Definizioni equivalenti:}
+%definizioni
+\begin{definition}
+Una trasformazione di coordinate in $ T^* (M) $
+
+\begin{align*}
+x'^i = x'^i (x^1, \dots , x^m, y_1, \dots , y_m) \\
+y'^i = y'^i (x^1, \dots , x^m, y_1, \dots , y_m)
+\end{align*}
+
+è detta \textit{canonica} se la rappresentazione delle parentesi di Poisson in $ T^* (M) $ viene primata :
+%FIXME
+\begin{equation*}
+\begin{array}{cc}
+\begin{aligned}
+\{ f, g \} &= \frac{\partial f}{\partial x^i} \frac{\partial g}{\partial y_i} - \frac{\partial f}{\partial y_i} \frac{\partial g}{\partial x^i} = \\
+&= \frac{\partial f}{\partial x'^i} \frac{\partial g}{\partial y'_i} - \frac{\partial f}{\partial y'_i} \frac{\partial g}{\partial x'^i}
+\end{aligned}
+&
+\mathcal{8} f, g \in \mathcal{F} ( T^*(M)) \\
+\end{array}
+\end{equation*}
+(si è indicato con f, g le funzioni f, g espresse nei diversi sistemi di coordinate).
+\end{definition}
+
+\begin{definition}
+Una trasformazione di coordinate in $ T^* (M) $ è detta \textit{canonica} se vengono primate le parentesi di Poisson fondamentali:
+\begin{eqnarray*}
+\{x'^i,x'^j\}=0 & \{y'_i,y'_j\}=0 & \{x'^i,y'_j\}=\delta^{i}_{j}
+\end{eqnarray*}
+\end{definition}
+
+L'equivalenza tra le due definizioni segue dalla proprietà $ 4 $ di pagina $ \pageref{pag:assioma_funz_comp}$:
+
+\begin{equation*}
+\begin{split}
+  \{f,g\}&= \frac{\partial f}{\partial x'^i}\{x'^i,g\}+\frac{\partial f}{\partial y'_i} \{y'_i,g\}  \\
+&= \frac{\partial f}{\partial x'^i}\biggl(\{x'^i,x'^j\} \frac{\partial f}{\partial x'^j}+\{x'^i,y'_j\} \frac{\partial f}{\partial y'_j} \biggr) + \frac{\partial f}{\partial y'_i}\biggl(\{y'_i,x'^j\} \frac{\partial f}{\partial x'^j}+\{y'_i,y'_j\} \frac{\partial f}{\partial y'_j} \biggr)\\
+\end{split}
+\end{equation*}
+La conclusione è ovvia.
+\\
+\\
+Torniamo al problema della caratterizzazione delle trasformazioni canoniche in $ T^*(\mathcal{V}_{n+1}) $.\\
+Osserviamo innanzitutto che le \textit{trasformazioni di scambio} del tipo \label{pag:trasf_scambio}
+
+\begin{equation*}
+\begin{split} 
+&
+\begin{cases}
+x'^k = y'_k \\
+y'_k = - x^k\\
+\end{cases}
+\text{per qualche } k \in \{1, \dots , m\} \\
+e~~~~~~&
+\begin{cases}
+x'^r = x^r \\
+y'_r = y_r\\
+\end{cases}
+\text{per $ r $ diverso dai $ k $ presi sopra} \\
+\end{split}
+\end{equation*}
+sono canoniche.\\ 
+A parte questi casi particolari (non banali e interessanti per l'interpretazione fisica ( $ P \rightarrow q, q \rightarrow -P $ )), la caratterizzazione delle trasformazioni canoniche in $ T^* (M) $, anzichè a partire dalla rappresentazione \textit{esplicita}
+
+\begin{align*}
+x'^i &= x'^i(x^1, \dots , x^m, y_1, \dots , y_m)
+\\
+y'_i &= y'_i(x^1, \dots , x^m, y_1, \dots , y_m)
+\end{align*}
+
+sarà svolta più agevolmente a partire dalla rappresentazione \textit{implicita}
+
+\begin{align*}
+x'^i &= x'^i(x^1, \dots , x^m, y'_1, \dots , y'_m)
+\\
+y_i &= y_i(x^1, \dots , x^m, y'_1, \dots , y'_m)
+\end{align*}
+
+% FINE PAGINA 29 - INIZIO PAGINA 30
+
+il legame tra le due rappresentazioni, essendo garantito almeno localmente dal teorema della funzione implicita, ogni volta che sia valida la condizione
+
+\begin{equation*}
+det
+\left( \frac{\partial (y_1, \dots, y_m)}{\partial (y'_1, \dots, y'_m)} \right)
+\ne 0
+\end{equation*}
+
+(con $ x^1, \dots , x^m $ aventi un ruolo parametrico).
+\\
+\textit{Sussiste il seguente risultato:}\\
+Condizione necessaria e sufficiente affinchè una trasformazione di coordinate in  $ T^* (M) $ data nella forma
+
+\begin{align*}
+x'^i &= x'^i(x,y')
+\\
+y_i &= y_i(x,y')
+\end{align*}
+
+sia \textit{canonica}, è che le funzioni $ x'^i $ , $ y_i $ sopra introdotte soddisfino le condizioni di \textit{irrotazionalità}
+
+\begin{align*}
+\frac{\partial x'^i}{\partial y'_j}=\frac{\partial x'^j}{\partial y'_i}, \qquad \frac{\partial x'^i}{\partial x^j}=\frac{\partial y_j}{\partial y'_i}, \qquad \frac{\partial y_i}{\partial x^j}=\frac{\partial y_j}{\partial x^i}.
+\end{align*}
+\\
+
+Esprimiamo la trasformazione $ x^i, y_i \longleftrightarrow x'^i, y'_i $ nella forma
+
+\begin{align*}
+x'^i &= x'^i (x^1, \dots , x^m, y'_1, \dots , y'_m) = x'^i (x, y') \\
+y_i &= y_i (x^1, \dots , x^m, y'_1, \dots , y'_m) = y_i (x, y')
+\end{align*}
+
+e caratterizziamo le trasformazioni tali che
+
+\begin{equation*}
+X'_i Y'^i - X'^i Y'_i = X_i Y^i - X^i Y_i
+\end{equation*}
+
+per ogni coppia di campi $ X, Y $. \\
+La condizione suddetta equivale a:
+
+\begin{equation*}
+\begin{split}
+&<dy'_i, X><dx'^i, Y>-<dx'^i, X><dy'_i, Y> =\\
+&= <dy_i, X><dx^i, Y>-<dx^i, X><dy_i, Y>  \quad \qquad \forall X, Y
+\end{split}
+\end{equation*}
+\\
+\begin{equation*}
+\begin{split}
+&<dy'_i, X> <\frac{\partial x'^i}{\partial x^k} dx^k + \frac{\partial x'^i}{\partial y'_k}dy'_k, Y> - <\frac{\partial x'^i}{\partial x^k} dx^k + \frac{\partial x'^i}{\partial y'_k} dy'_k, X><dy'_i, Y> = \\
+&= <\frac{\partial y_i}{\partial x^k} dx^k + \frac{\partial x'^i}{\partial y'_k} dy'_k, X><dx^i, Y> - <dx^i, X><\frac{\partial y_i}{\partial x^k} dx^k + \frac{\partial y_i}{\partial y'_k} dy'_k, Y> \quad \qquad \forall X, Y
+\end{split}
+\end{equation*}
+\\
+
+% FINE PAGINA 30 - INIZIO PAGINA 31
+
+\begin{equation*}
+\begin{split}
+&\frac{\partial x'^i}{\partial x^k} <dy'_i \uline{, X>}<dx^k, Y> + \frac{\partial x'^i}{\partial y'_k} <dy'_i \uline{, X>}<dy'_k, Y> - \\
+&\frac{\partial x'^i}{\partial x^k} <dx^k \uuline{, X>}<dy'_i, Y> - \frac{\partial x'^i}{\partial y'_k} <dy'_k \uline{, X>}<dy'_i, Y> = \\
+&= \frac{\partial y_i}{\partial x^k}<dx^k \uwave{, X>}<dx^i, Y> + \frac{\partial y_i}{\partial y'_k}<dy'_k \uline{, X>}<dx^i, Y> - \\
+& \frac{\partial y_i}{\partial x^k}<dx^i \uwave{, X>}<dx^k, Y> - \frac{\partial y_i}{\partial y'_k}<dx^i \uuline{, X>}<dy'_k, Y> \quad \qquad \forall X, Y
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+&\biggl(\frac{\partial x'^i}{\partial x^k} - \frac{\partial y_k}{\partial y'_i}\biggr)<dy'_i, X><dx^k, Y> + \biggl(\frac{\partial x'^i}{\partial y'_k} - \frac{\partial x'^k}{\partial y'_i} \biggr)<dy'_i, X><dy'_k, Y> - \\
+&\biggl( \frac{\partial x'^i}{\partial x^k} - \frac{\partial y_k}{\partial y'_i} \biggr)<dx^k, X><dy'_i, Y> - \biggl(\frac{\partial y_i}{\partial x^k} - \frac{\partial y_k}{\partial x^i} \biggr)<dx^k, X><dx^i, Y> = 0
+\end{split}
+\end{equation*}
+\\
+e, per l'arbitrarietà
+dei campi $ X, Y $, si ha
+\begin{equation*}
+\frac{\partial x'^i}{\partial x^k}-\frac{\partial y_k}{\partial y'_i}=0, \qquad \frac{\partial x'^i}{\partial y'_k}-\frac{\partial x'^k}{\partial y'_i}=0, \qquad \frac{\partial y_i}{\partial x^k}-\frac{\partial y_k}{\partial x^i}=0 \qquad i, k = 1, \dots , m
+\end{equation*}
+
+che possono essere riguardate come condizioni necessarie e localmente sufficienti per l'esistenza della rappresentazione \label{pag:trasf_can_pag24}
+
+\begin{align*}
+x'^i &= x'^i(x,y')=\frac{\partial F(x,y')}{\partial y'_i}
+\\
+y_i &= y_i(x,y')=\frac{\partial F(x,y')}{\partial x^i}
+\end{align*}
+
+della trasformazione di coordinate $ x^i, y_i \longleftrightarrow x'^i, y'_i $ in termini della funzione $F = F (x, y') = F (x^1, \dots , x^m, y'_1, \dots , y'_m) $, detta \textit{funzione generatrice} della trasformazione.\\
+Ovviamente, assegnata una funzione $ F (x, y') $, essa definirà effettivamente una trasformazione se
+\begin{equation*}
+det
+\left( \frac{\partial (y_1, \dots , y_m)}{\partial (y'_1, \dots , y'_m)} \right) = det \left( \frac{\partial^2  F}{\partial y'_i \partial x^j} \right) \ne 0
+\end{equation*}
+
+Notare che $ F $ risulta funzione delle \textit{vecchie} variabili $ x^1, \dots ,x^m $ e delle \textit{nuove} variabili $ y'_1, \dots ,y'_m $, e che quindi $ F $ definisce sempre una trasformazione canonica in modo \textit{implicito}.\\
+Infine possiamo affermare che la \textit{più generale trasformazione canonica} si ottiene componendo una trasformazione canonica generata da $ F = F (x, y') $ nel modo sopra detto con trasformazioni di \textit{scambio} (vedi pagina \pageref{pag:trasf_scambio} ).
+

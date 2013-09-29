@@ -1,0 +1,154 @@
+\section{Esercizi sulla teoria di Hamilton-Jacobi}
+\setcounter{equation}{0}
+
+Considerata la funzione generatrice $ F $ nella forma:
+
+\begin{equation*}
+F = F (t, q^k, q'^k)
+\end{equation*}
+
+la trasformazione tra le varibili $ t, q^k, P_k $ e $ t' = t, q'^k, P'_k $ è data, in moto involuto, da
+
+\begin{subequations}{\label{eq:es_ham_jac_1}}
+\begin{eqnarray}
+P_i = \frac{\de F (t, q^k, q'^k)}{\de q^i}\\ \label{eq:es_ham_jac_1a}
+P'_i = - \frac{\de F (t, q^k, q'^k)}{\de q'^i} \label{eq:es_ham_jac_1b}
+\end{eqnarray}
+\end{subequations}
+
+e l'equazione di Hamilton-Jacobi prende la forma
+
+\begin{equation}
+H \left(t, q^k, \frac{\de F}{\de q^k} \right) + \frac{\de F}{\de t} = 0
+\end{equation}
+
+
+%\hline QUI BISOGNA INSERIRE UNA LINEA
+
+
+\subsubsection*{Oscillatore armonico}
+
+\begin{equation}
+H = H (t, q, P)= \frac{P^2}{2m} + \frac{1}{2} m \omega^2q^2
+\end{equation}
+
+Cerco $F$ nella forma
+
+\begin{equation}
+F = F (t, q, q') = - q' t + w (q, q')
+\end{equation}
+
+\begin{equation}
+\frac{1}{2m} {\left( \frac{\de w}{\de q} \right)}^2+\frac{1}{2} m \omega^2q^2=q'
+\end{equation}
+
+Notare che il parametro $ q' $ si identifica con l'energia totale, per cui lo indicheremo con $ h $.
+
+\begin{align*}
+\frac{\de w}{\de q} &= \sqrt{m} \sqrt{2h - m \omega^2q^2}\\
+w (q, h) &= \int \sqrt{m} \sqrt{2h - m \omega^2q^2} dq~(+ c)
+\end{align*}
+
+\begin{equation}
+F (t, q, h) = - h t + \sqrt{m} \int \sqrt{2h + m \omega^2 q^2} dq ~ (+ c)
+\end{equation}
+
+per la ($ \ref{eq:es_ham_jac_1} a, b $) la trasformazione di coordinate fornita da $ F (t, q, q') $, dove $ q' = h $ è perciò
+
+\begin{align*}
+P &= \frac{\partial F (t, q, h)}{\partial q} \\
+P' &= -\frac{\partial F (t, q, h)}{\partial h}
+\end{align*}
+
+\begin{equation*}
+\begin{split}
+P' &= - \frac{\partial F}{\partial h} = t - \frac{\partial w}{\partial h} = t - \sqrt{m} \mathlarger{\int{\frac{dq}{\sqrt{2h - m \omega^2 q^2}}}} \\
+&= t - \frac{1}{\omega} \mathlarger{\int{\frac{dq}{\sqrt{\frac{2h}{m\omega^2} - q^2}}}} = t - \frac{1}{\omega} arcsin \left( \sqrt{\frac{m \omega^2}{2h}} q \right)
+\end{split}
+\end{equation*}
+
+Che, risolta rispetto a $ q $, fornisce
+
+\begin{equation*}
+\omega (t - P') = arcsin \left( \sqrt{\frac{m\omega^2}{2h}} q \right)
+\end{equation*}
+
+\begin{equation} \label{eq:es_ham_jac_7}
+q (t, q', P') = \sqrt{\frac{2h}{m \omega^2}} sin(\omega(t - P'))
+\end{equation}
+
+che fornisce $ q $ in funzione del tempo e delle $ 2 $ quantità costanti lungo ogni moto
+
+\begin{align*}
+&q' = h = (\text{energia totale}) \\
+&P' \qquad \quad (\text{fase temporale})
+\end{align*}
+
+Per completezza abbiamo
+
+\begin{equation} \label{eq:es_ham_jac_8}
+P = \frac{\partial F}{\partial q} = \frac{\partial w}{\partial q} = \sqrt{m} \sqrt{2h - m \omega^2 q^2}
+\end{equation}
+
+e sostituendo in ($ \ref{eq:es_ham_jac_8} $) quanto ricavato nella ($ \ref{eq:es_ham_jac_7} $), abbiamo $P = P (t, q', P')$ ovvero $P$ in funzione del tempo e delle due quantità conservate $q' = h$, $P'$.
+
+\subsubsection*{Campo centrale}
+
+\begin{equation}
+H = H (t, r, \theta, P_r, P_\theta) = \frac{P_r^2}{2m} + \frac{P_\theta^2}{2mr^2} + V(r)
+\end{equation}
+
+Cerco $ F $ nella forma
+
+\begin{equation*}
+ F = F (t, r, \theta, q'^1, q'^2) = - q'^1 t + w (r, \theta, q'^1, q'^2)
+\end{equation*}
+
+l'equazione di Hamilton-Jacobi diventa
+
+\begin{equation*}
+\frac{1}{2m} \left( \frac{\partial w}{\partial r} \right)^2 + \frac{1}{2mr^2} \left( \frac{\partial w}{\partial \theta} \right)^2 + V(r) = q'^1 \qquad q'^1~energia~totale
+\end{equation*}
+
+Cerchiamo $ w (r, \theta, q'^1, q'^2) $ nella forma
+
+\begin{equation*}
+\begin{split}
+& w = w (r, \theta, q'^1, q'^2) = w_r(r, q'^1, q'^2) + w_\theta(\theta, q'^1, q'^2) \\
+& \left[ \frac{1}{2m} \left( \frac{\partial w_r}{\partial r} \right)^2 + V(r) - q'^1 \right] 2mr^2 = -\left( \frac{\partial w_\theta}{\partial \theta} \right)^2 \\
+& \begin{cases}\left[ \frac{1}{2m} \left( \frac{\partial w_r}{\partial r} \right)^2 + V(r) - q'^1 \right] 2mr^2 = -\left( q'^2 \right)^2 \\
+\left( \frac{\partial w_\theta}{\partial \theta} \right)^2 =  \left( q'^2 \right)^2
+\end{cases}
+\end{split}
+\end{equation*}
+
+essendo $ q'^2 $ una unica quantità costante lungo ogni moto, che si identifica col momento della quantità di moto del sistema.
+
+\begin{equation*}
+\begin{split}
+& w_r (r, q'^1, q'^2) = \mathlarger{\int} \sqrt{2m q'^1 - 2m V(r) -\frac{\left( q'^2 \right)^2}{r^2}} dr \\
+& w_\theta (\theta, q'^1, q'^2) = q'^2 \theta
+\end{split}
+\end{equation*}
+
+\begin{align*}
+F (t, r, \theta, q'^1, q'^2) &= - q'^1 t + w (r, \theta, q'^1, q'^2) = - q'^1 t + q'^2 \theta +
+\\
+&+ \mathlarger{\int} \sqrt{2m q'^1 - 2m V(r) - \frac{\left( q'^2 \right)^2}{r^2}} dr
+\end{align*}
+
+La trasformazione è data da
+
+\begin{align*}
+& P_r = \frac{\partial F}{\partial r} & P_\theta = \frac{\partial F}{\partial \theta}
+\\
+& P'_1 = \frac{\partial F}{\partial q'^1} & P'_2 = \frac{\partial F}{\partial q'^2}
+\end{align*}
+
+\begin{equation*}
+\begin{split}
+& P'_1 = - \frac{\partial F}{\partial q'^1} = t - \mathlarger{\int} \frac{2m}{2 \sqrt{2m q'^1 - 2m V(r) - \frac{\left( q'^2 \right)^2}{r^2}}}dr \\
+& P'_2 = - \frac{\partial F}{\partial q'^2} = \theta - \mathlarger{\int} \frac{ \frac{- 2 q'^2}{r^2} }{2 \sqrt{2m q'^1 - 2m V(r) - \frac{\left( q'^2 \right)^2}{r^2}}}dr
+\end{split}
+\end{equation*}
+
